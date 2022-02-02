@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RotatorScript : MonoBehaviour
 {
     // variables
-    public float rotationSpeed = 0.1f;
+    public float rotationSpeed = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,16 +18,15 @@ public class RotatorScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
     }
 
-    // void Rotate1()
-    // {
-    //     this.GetComponent<Transform>().Rotate(0f,rotationSpeed,0f);
-    // }
+    void R(InputAction.CallbackContext context)
+    {
+        this.GetComponent<Transform>().Rotate(0f,rotationSpeed,0f);
+    }
 
-    //     void Rotate2()
-    // {
-    //     this.GetComponent<Transform>().Rotate(0f,-rotationSpeed,0f);
-    // }
+    void T(InputAction.CallbackContext context)
+    {
+        this.GetComponent<Transform>().Rotate(0f,-rotationSpeed,0f);
+    }
 }
